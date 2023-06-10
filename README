@@ -1,0 +1,27 @@
+hyprland-workspace-rename
+=========================
+
+I just wanted to assign a static icon to each hyprland workspace, sadly hyprland configuration does not support assign id and name seperately from each other.
+Thus this tool was born.
+
+## Usage
+
+Put configuration file `rename_workspace.toml` into the hyprland configuration directory `{XDG_CONFIG_DIR}/hypr`. Start this program at the start of hyprland.
+
+### Configuration Format
+
+``` toml
+[workspace_map]
+1 = ""
+2 = ""
+3 = ""
+4 = "󱃖"
+5 = "󱃖"
+6 = "󱃖"
+7 = ""
+8 = ""
+9 = "󰭹"
+10 = ""
+11 = "󱕴"
+```
+
