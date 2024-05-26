@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 config = "0.13.3"
 dirs-next = "2.0.0"
-hyprland = "0.3.3"
+hyprland = "0.4.0-alpha.2"
 serde = { version = "1.0.164", features = ["derive"] }

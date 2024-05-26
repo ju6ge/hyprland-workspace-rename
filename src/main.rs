@@ -5,7 +5,7 @@ use config::Config;
 use hyprland::dispatch::*;
 use hyprland::shared::HyprData;
 use hyprland::data::{Workspace, Workspaces};
-use hyprland::event_listener::EventListenerMutable as EventListener;
+use hyprland::event_listener::EventListener;
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
@@ -37,8 +37,8 @@ fn main() {
     });
     // listen for new workspaces to rename
     let mut ws_events_listener = EventListener::new();
-    ws_events_listener.add_workspace_added_handler(move |ws, state| {
-        match ws {
+    ws_events_listener.add_workspace_added_handler(move |ws_type| {
+        match ws_type {
             hyprland::shared::WorkspaceType::Regular(id) => {
                 let id_result: Result<i32, ParseIntError> = id.parse();
                 match id_result {
